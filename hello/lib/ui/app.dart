@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 import 'package:hello/route/routes.dart';
-import 'package:hello/store/model/count_model.dart';
+import 'package:hello/store/app_state_model.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class App extends StatefulWidget {
@@ -13,7 +13,7 @@ class App extends StatefulWidget {
 
 class AppState extends State<App> {
   //创建顶层状态
-  CountModel countModel = CountModel();
+  AppStateModel countModel = AppStateModel();
 
   AppState() {
     final router = new Router();
@@ -23,7 +23,7 @@ class AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    final app = ScopedModel<CountModel>(
+    final app = ScopedModel<AppStateModel>(
         model: countModel,
         child: new MaterialApp(
           title: '你好',
