@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'news_latest.g.dart';
 
 @JsonSerializable()
-class news_latest extends Object {
+class NewsLatest extends Object {
   @JsonKey(name: 'date')
   String date;
 
@@ -13,14 +13,14 @@ class news_latest extends Object {
   @JsonKey(name: 'top_stories')
   List<Top_stories> topStories;
 
-  news_latest(
+  NewsLatest(
     this.date,
     this.stories,
     this.topStories,
   );
 
-  factory news_latest.fromJson(Map<String, dynamic> srcJson) =>
-      _$news_latestFromJson(srcJson);
+  factory NewsLatest.fromJson(Map<String, dynamic> srcJson) =>
+      _$NewsLatestFromJson(srcJson);
 }
 
 @JsonSerializable()

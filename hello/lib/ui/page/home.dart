@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hello/route/routes.dart';
 import 'dart:convert';
 import 'package:scoped_model/scoped_model.dart';
-import 'package:hello/store/model/count_model.dart';
+import 'package:hello/store/app_state_model.dart';
 
 ///第一个界面
 class Home extends StatefulWidget {
@@ -12,11 +12,11 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  String message = '首页';
+  String message = '首页1';
 
   @override
   Widget build(BuildContext context) {
-    return ScopedModelDescendant<CountModel>(builder: (context, child, model) {
+    return ScopedModelDescendant<AppStateModel>(builder: (context, child, model) {
       return Scaffold(
         appBar: AppBar(
           title: Text('首页'),

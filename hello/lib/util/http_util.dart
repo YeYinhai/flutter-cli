@@ -22,7 +22,7 @@ class HttpUtil {
   HttpUtil() {
     // 或者通过传递一个 `options`来创建dio实例
     options = BaseOptions(
-      baseUrl: "https://www.xx.com/api",
+      baseUrl: "https://news-at.zhihu.com/api/4/",
       //连接服务器超时时间，单位是毫秒.
       connectTimeout: 10000,
 
