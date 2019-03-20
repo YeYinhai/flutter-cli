@@ -77,7 +77,7 @@ class HomeState extends State<Home> {
                     child: Card(
                       child: new Center(
                         child: new Text(
-                          str[index],
+                          model.newsLatest.stories[index].title,
                           style: new TextStyle(fontSize: 18.0),
                         ),
                       ),
@@ -97,10 +97,11 @@ class HomeState extends State<Home> {
             });
           },
           loadMore: _loadMore
-              ? () async {
-                  await new Future.delayed(const Duration(seconds: 1), () {
+              ? () {
+                  new Future.delayed(const Duration(seconds: 1), () {
                     if (str.length < 20) {
                       setState(() {
+                        model.getNewsLatest();
                         str.addAll(addStr);
                       });
                     } else {

@@ -16,6 +16,7 @@ import 'package:hello/util/http_util.dart';
 import '../apis.dart';
 import '../entity/news.dart';
 import '../entity/news_latest.dart';
+import 'package:dio/dio.dart';
 
 class NewsModel extends Model {
   News _news = null;
@@ -31,10 +32,9 @@ class NewsModel extends Model {
     });
   }
 
-  void getNewsLatest() {
-    HttpUtil().get(Apis.NEWS_LATEST, cancelToken: (data) {
-      _newsLatest = NewsLatest.fromJson(data);
-      notifyListeners();
-    });
+  void getNewsLatest() async {
+    dynamic data = await HttpUtil().get(Apis.NEWS_LATEST);
+    _newsLatest = NewsLatest.fromJson(data);
+    notifyListeners();
   }
 }
